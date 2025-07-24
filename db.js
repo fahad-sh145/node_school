@@ -10,7 +10,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/school' ,{
     useUnifiedTopology: true
 })
 
-
+g
 const db = mongoose.connection;
 
 db.on('connected',()=>{
