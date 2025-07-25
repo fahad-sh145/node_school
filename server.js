@@ -137,12 +137,17 @@ const app = express();
 
 const db = require('./db');
 
+require('dotenv').config();
+
 // const student = require('./models/student');
 
 // const sir = require('./models/sir');
 
 const bodyparser = require('body-parser');
 app.use(bodyparser.json());
+
+
+const PORT = process.env.PORT || 3000
 
 app.get('/', (req, res) => {
     res.send(" hello");
@@ -301,6 +306,11 @@ const sirroutes = require('./routes/sirroutes');
 app.use('/student' ,studentroutes);
 app.use('/sir' ,sirroutes);
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
     console.log(" i am still alive");
 })
+
+
+// app.listen(3000, () => {
+//     console.log(" i am still alive");
+// })
